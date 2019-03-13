@@ -28,6 +28,20 @@
     urlcolor=cyan           % color of external links
 }
 
+\makeatletter
+\def\Opacity{1}
+\addtobeamertemplate{headline}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\ifnum\theframenumber=1\relax\else\def\Opacity{0.3}\fi
+  \node[opacity=\Opacity,anchor=north,inner sep=0pt,outer sep=0pt]
+  at ([xshift=0.5\beamer@sidebarwidth]current page.north)
+  {\includegraphics[
+    height=\beamer@headheight
+    ]{title_logo.png}};
+\end{tikzpicture}%
+}
+\makeatother
+
 \title{Cloud Computing}
 \date{$14^{th}$ March 2019}
 \subtitle{Working with Google Cloud}
@@ -133,6 +147,14 @@ More than 4 million paying customers (February 2018).
     \item Compute Engine: scalable virtual machines (IaaS).
     \item Kubernetes: run containers (Docker).
   \end{itemize}
+  \vspace{1cm}
+  \begin{figure}[H]
+    \includegraphics[width=0.2\textwidth]{img/app_engine}
+    \hspace{1cm}   \includegraphics[width=0.2\textwidth]{img/compute_engine}
+    \hspace{1cm}
+     \includegraphics[width=0.2\textwidth]{img/kubernetes}
+  \end{figure}
+
 \end{frame}
 
 \subsection{Networking}
@@ -140,20 +162,34 @@ More than 4 million paying customers (February 2018).
 \begin{frame}[fragile]{GCP Networking products}
   \begin{itemize}[<+->]
     \item Cloud Armor: protection against DoS attacks.
-    \item Cloud VPN
     \item Network Service Tiers: optimize network for performance or cost.
     \item Load balancing: intelligent scaling through multiple regions.
   \end{itemize}
+
+  \vspace{1cm}
+  \begin{figure}[H]
+    \includegraphics[width=0.27\textwidth]{img/cloud_armor}
+    \hspace{2cm}   \includegraphics[width=0.2\textwidth]{img/load_balancing}
+  \end{figure}
 \end{frame}
 
 \subsection{Big Data}
 
 \begin{frame}[fragile]{GCP Big Data products}
   \begin{itemize}[<+->]
+    \item Dataprep: clean data for analysis.
     \item Dataflow: batch data processing.
     \item Genomics (for bioinformatics)
-    \item Dataprep: clean data for analysis.
   \end{itemize}
+
+  \vspace{1cm}
+  \begin{figure}[H]
+    \includegraphics[width=0.2\textwidth]{img/dataprep}
+    \hspace{1cm}   \includegraphics[width=0.2\textwidth]{img/dataflow}
+    \hspace{1cm}
+     \includegraphics[width=0.2\textwidth]{img/genomics}
+  \end{figure}
+
 \end{frame}
 
 \subsection{Machine Learning}
@@ -165,6 +201,15 @@ More than 4 million paying customers (February 2018).
     \item Natural Language API: extract information from a text (sentiment, importance in the whole text).
     \item Translate API: Google Translate.
   \end{itemize}
+  \vspace{1cm}
+  \begin{figure}[H]
+    \includegraphics[width=0.15\textwidth]{img/vision}
+    \hspace{0.7cm}   \includegraphics[width=0.15\textwidth]{img/speech}
+    \hspace{0.7cm}
+     \includegraphics[width=0.15\textwidth]{img/natural-language}
+     \hspace{0.7cm}
+     \includegraphics[width=0.15\textwidth]{img/translate}
+  \end{figure}
 \end{frame}
 
 \section{Let's try it!}
@@ -252,11 +297,20 @@ More than 4 million paying customers (February 2018).
     \end{figure}
 \end{frame}
 
+
 \begin{frame}[fragile]
  \begin{center}
   \Huge
   Thanks for your attention!
  \end{center}
+ \vspace{2cm}
+ Source code available at \textcolor{blue}{\url{http://www.github.com/csp98}}
+ \vspace{1cm}
+ \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.05]{github-mark.png}
+ \end{figure}
+
 \end{frame}
 
 \end{document}

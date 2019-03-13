@@ -2,3 +2,11 @@
   \Huge
   Thanks for your attention!
  \end{center}
+ \vspace{2cm}
+ Source code available at \textcolor{blue}{\url{http://www.github.com/csp98}}
+ \vspace{1cm}
+ \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.05]{github-mark.png}
+ \end{figure}
+
